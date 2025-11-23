@@ -1,0 +1,7 @@
+next-env.d.ts
+
+# Firebase
+deploy/.firebase
+deploy/firebase-debug.log
+deploy/firestore-debug.log
+deploy/ui-debug.log

@@ -1,0 +1,32 @@
+{
+  "extends": "@shirux/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@shirux/rux-ui/*": ["../../packages/shirux-ui/src/*"],
+      "@shirux/rux-icons/fill": ["../../packages/shirux-icons/src/fill/index.ts"],
+      "@shirux/rux-icons/fill/*": ["../../packages/shirux-icons/src/fill/*"],
+      "@shirux/rux-icons/two-tone": ["../../packages/shirux-icons/src/two-tone/index.ts"],
+      "@shirux/rux-icons/two-tone/*": ["../../packages/shirux-icons/src/two-tone/*"],
+      "@shirux/rux-icons/logo": ["../../packages/shirux-icons/src/logo/index.ts"],
+      "@shirux/rux-icons/logo/*": ["../../packages/shirux-icons/src/logo/*"],
+      "@shirux/rux-icons/lucide": ["../../packages/shirux-icons/src/lucide/index.ts"],
+      "@shirux/rux-icons/*": ["../../packages/shirux-icons/src/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "svgr.d.ts",
+    "next-env.d.ts",
+    "next.config.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

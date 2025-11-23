@@ -1,0 +1,27 @@
+export const pagePath = {
+  home: '/',
+  auth: {
+    login: '/auth/login',
+    register: '/auth/register',
+    forgotPassword: '/auth/forgot-password',
+  },
+  profile: '/profile',
+  colorSystem: '/color-system',
+  eluIcons: '/rux-icons',
+  components: {
+    accordion: '/components/accordion',
+    button: '/components/button',
+    card: '/components/card',
+    collapsibleMenu: '/components/collapsible-menu',
+    dropdownMenu: '/components/dropdown-menu',
+    input: '/components/input',
+    modal: '/components/modal',
+    phoneInput: '/components/phone-input',
+    popover: '/components/popover',
+    scrollArea: '/components/scroll-area',
+    select: '/components/select',
+    separator: '/components/separator',
+    stack: '/components/stack',
+    typography: '/components/typography',
+  },
+} as const;
