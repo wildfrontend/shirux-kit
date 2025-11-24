@@ -1,0 +1,49 @@
+{
+  "name": "shirux-storybook",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbopack -p 6006",
+    "format": "eslint --fix ./src",
+    "lint": "eslint ./src",
+    "start": "next start",
+    "deploy": "pnpm build && cp -r out deploy/out && cd deploy && firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@shirux/rux-icons": "workspace:*",
+    "@shirux/rux-ui": "workspace:*",
+    "@tanstack/react-query": "^5.90.6",
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "axios": "^1.13.2",
+    "firebase": "^11.10.0",
+    "firebase-admin": "^13.6.0",
+    "libphonenumber-js": "^1.12.25",
+    "lucide-react": "^0.552.0",
+    "next": "^16.0.1",
+    "next-themes": "^0.4.6",
+    "path-to-regexp": "^8.3.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-hook-form": "^7.66.0",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@hookform/devtools": "^4.4.0",
+    "@shirux/eslint-config": "workspace:^",
+    "@shirux/prettier-config": "workspace:*",
+    "@shirux/types": "workspace:*",
+    "@shirux/typescript-config": "workspace:*",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "eslint": "^9.39.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/styles/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true
+  },
+  "iconLibrary": "lucide",
+  "aliases": {
+    "components": "@shirux/rux-ui/components",
+    "utils": "@shirux/rux-ui/lib/utils",
+    "hooks": "@shirux/rux-ui/hooks",
+    "lib": "@shirux/rux-ui/lib",
+    "ui": "@shirux/rux-ui/components"
+  },
+  "registries": {
+    "@acme": "https://acme.com/r/{name}.json"
+  }
+}

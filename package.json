@@ -1,0 +1,23 @@
+{
+  "name": "shirux-kit",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev:storybook": "turbo run dev --filter=shirux-storybook",
+    "icon:build": "turbo run build --filter=@shirux/rux-icons",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix"
+  },
+  "devDependencies": {
+    "@shirux/eslint-config": "workspace:*",
+    "@shirux/prettier-config": "workspace:*",
+    "@shirux/typescript-config": "workspace:*",
+    "turbo": "^2.5.5",
+    "typescript": "5.7.3"
+  },
+  "packageManager": "pnpm@10.4.1",
+  "engines": {
+    "node": ">=20"
+  }
+}
