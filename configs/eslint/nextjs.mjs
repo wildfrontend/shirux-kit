@@ -1,26 +1,28 @@
-import nextVitals from 'eslint-config-next/core-web-vitals'
-import eslintConfigPrettier from "eslint-config-prettier";
-import eslintPluginPrettier from "eslint-plugin-prettier";
-import unusedImports from "eslint-plugin-unused-imports"
+import nextVitals from "eslint-config-next/core-web-vitals";
+
+import { config as baseConfig } from "./base.mjs";
 
 /**
  * A custom ESLint configuration for libraries that use Next.js.
  *
  * @type {import("eslint").Linter.Config}
  * */
-export const nextJsConfig = [
+export const config = [
+  ...baseConfig,
   ...nextVitals,
-  eslintConfigPrettier,
   {
-    plugins: {
-      prettier: eslintPluginPrettier,
-      "unused-imports": unusedImports,
-    },
     rules: {
-      "prettier/prettier": "warn",
-      "react/jsx-sort-props": "warn",
-      "no-unused-vars": "off",
-      "unused-imports/no-unused-imports": "warn",
+      "perfectionist/sort-imports": ["warn", {
+        groups: [
+          "side-effect",
+          "side-effect-style",
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index"],
+        ],
+        internalPattern: ["^@/.*"],
+      }],
       "react/no-unescaped-entities": "off",
     },
   },

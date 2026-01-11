@@ -1,35 +1,56 @@
 import js from "@eslint/js";
-import onlyWarn from "eslint-plugin-only-warn";
 import eslintConfigPrettier from "eslint-config-prettier";
-import eslintPluginPrettier from "eslint-plugin-prettier";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
-import turboPlugin from "eslint-plugin-turbo";
+import onlyWarn from "eslint-plugin-only-warn";
+import perfectionist from "eslint-plugin-perfectionist";
+import unusedImports from "eslint-plugin-unused-imports";
 import tseslint from "typescript-eslint";
 
 export const config = [
   js.configs.recommended,
-  eslintConfigPrettier,
   ...tseslint.configs.recommended,
   {
     plugins: {
-      turbo: turboPlugin,
       onlyWarn,
-      prettier: eslintPluginPrettier,
-      "simple-import-sort": simpleImportSort,
+      perfectionist,
+      "unused-imports": unusedImports,
     },
     rules: {
-      "turbo/no-undeclared-env-vars": "warn",
-      "prettier/prettier": "warn",
-      "simple-import-sort/imports": "warn",
-      "simple-import-sort/exports": "warn",
+      "perfectionist/sort-imports": ["warn", {
+        groups: [
+          "side-effect",
+          "side-effect-style",
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index"],
+        ],
+      }],
+      "perfectionist/sort-named-imports": ["warn", {
+        type: "natural",
+        order: "asc",
+      }],
+      "perfectionist/sort-jsx-props": ["warn", {
+        type: "alphabetical",
+        order: "asc",
+      }],
+      "@typescript-eslint/consistent-type-imports": ["warn", {
+        prefer: "type-imports",
+        fixStyle: "separate-type-imports",
+      }],
+      "@typescript-eslint/no-unused-vars": "off",
+      "no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "warn",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
     },
-  },
-  {
-    // Disable type-aware linting for config files
-    files: ["**/*.config.{js,mjs,cjs,ts,mts,cts}"],
-    ...tseslint.configs.disableTypeChecked,
   },
   {
     ignores: ["dist/**", "build/**", "node_modules/**"],
   },
+  eslintConfigPrettier,
 ];

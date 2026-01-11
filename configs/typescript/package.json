@@ -2,8 +2,10 @@
   "name": "@shirux/typescript-config",
   "version": "0.0.0",
   "private": true,
-  "license": "PROPRIETARY",
-  "publishConfig": {
-    "access": "public"
+  "exports": {
+    "./base.json": "./base.json",
+    "./node.json": "./node.json",
+    "./nextjs.json": "./nextjs.json",
+    "./react-library.json": "./react-library.json"
   }
 }

@@ -1,0 +1,28 @@
+{
+  "name": "@shirux/dev-report-mcp",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "dev-report-mcp": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "format": "prettier --write ./src"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "@notionhq/client": "^5.6.0",
+    "@notionhq/notion-mcp-server": "^2.0.0",
+    "dotenv": "^17.2.3",
+    "marked": "^17.0.1",
+    "simple-git": "^3.30.0",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "prettier": "^3.7.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3"
+  }
+}
